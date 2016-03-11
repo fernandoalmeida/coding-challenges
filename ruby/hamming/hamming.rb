@@ -6,9 +6,6 @@ class Hamming
 
     fail(ArgumentError, 'strands must have equal size') if a.size != b.size
 
-    x = a.split('')
-    y = b.split('')
-
-    x.count { |e| e != y.shift }
+    a.chars.count { |c| c != b.slice!(0) }
   end
 end
