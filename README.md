@@ -1,4 +1,6 @@
-My solutions for [exercism.io](http://exercism.io) problems
+Solutions for coding challenges
+
+* [Exercism.io](http://exercism.io)
 
 ### Useful links
 
