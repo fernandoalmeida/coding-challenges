@@ -1,15 +1,14 @@
 module Pangram
   VERSION = 6
-  PANGRAM_SIZE = 'abcdefghijklmnopqrstuvwxyz'.size
+  ALPHABET = 'abcdefghijklmnopqrstuvwxyz'.freeze
 
   def pangram?(phrase)
     phrase
       .downcase
-      .gsub(/[^a-z]/, '')
+      .gsub(/[^#{ALPHABET}]/, '')
       .chars
       .uniq
-      .size == PANGRAM_SIZE
+      .size == ALPHABET.size
   end
-
   module_function :pangram?
 end
