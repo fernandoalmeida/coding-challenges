@@ -7,12 +7,8 @@ difference_of_squares(Number) ->
     square_of_sum(Number) - sum_of_squares(Number).
 
 square_of_sum(Number) ->
-    Numbers = lists:seq(1, Number),
-    Sum = lists:foldl(fun(N, Sum) -> N + Sum end, 0, Numbers),
-    trunc(math:pow(Sum, 2)).
+    Sum = lists:sum(lists:seq(1, Number)),
+    Sum * Sum.
 
 sum_of_squares(Number) ->
-    Numbers = lists:seq(1, Number),
-    Squares = lists:map(fun(N) -> math:pow(N, 2) end, Numbers),
-    Sum = lists:foldl(fun(N, Sum) -> N + Sum end, 0, Squares),
-    trunc(Sum).
+    lists:sum([N * N || N <- lists:seq(1, Number)]).
